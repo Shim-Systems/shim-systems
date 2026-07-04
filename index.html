@@ -56,12 +56,12 @@
             </div>
             <div>
                 <span class="font-semibold text-xs tracking-wider text-[#E6EDF0] block">SHIM SYSTEMS //</span>
-                <span class="text-[9px] text-[#B2916F] font-medium tracking-wider block -mt-0.5">SHIMSYSTEMS.AU</span>
+                <span class="text-[9px] text-[#B2916F] font-medium tracking-wider block -mt-0.5">SHIMSYSTEMS.COM</span>
             </div>
         </div>
         <nav class="hidden sm:flex items-center gap-6 text-xs text-[#8E969F] uppercase">
             <span onclick="document.getElementById('systems-frameworks-section').scrollIntoView({behavior: 'smooth'})" class="hover:text-[#B2916F] cursor-pointer">[FRAMEWORKS]</span>
-            <a href="index_studio.html" target="_parent" class="text-xs py-1 px-2 border border-systems rounded text-[#B2916F] hover:bg-[#B2916F]/10 transition-all">STUDIO_BLUEPRINT</a>
+            <a href="https://shimstudio.com" target="_blank" class="text-xs py-1 px-2 border border-systems rounded text-[#B2916F] hover:bg-[#B2916F]/10 transition-all">STUDIO_BLUEPRINT</a>
         </nav>
     </header>
 
@@ -163,7 +163,7 @@
                 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div>
                         <label class="block text-[9px] uppercase font-semibold text-[#8E969F] mb-1">Corporate Email</label>
-                        <input type="email" placeholder="name@organisation.com.au" class="w-full bg-[#22252A] border border-systems rounded px-3 py-2 text-xs text-[#E6EDF0] focus:outline-none focus:border-[#B2916F] shadow-sm" required>
+                        <input type="email" placeholder="name@organisation.com" class="w-full bg-[#22252A] border border-systems rounded px-3 py-2 text-xs text-[#E6EDF0] focus:outline-none focus:border-[#B2916F] shadow-sm" required>
                     </div>
                     <div>
                         <label class="block text-[9px] uppercase font-semibold text-[#8E969F] mb-1">Infrastructure Target</label>
@@ -202,7 +202,7 @@
     </footer>
 
     <!-- Privacy Policy Modal Overlay -->
-    <div id="privacy-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-gray-950/85 backdrop-blur-sm p-4">
+    <div id="privacy-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-gray-950/80 backdrop-blur-sm p-4">
         <div class="bg-gray-900 text-[#E6EDF0] max-w-lg w-full rounded p-8 shadow-2xl border border-gray-800 relative font-mono text-xs">
             <button onclick="closePrivacyModal()" class="absolute top-6 right-6 text-gray-500 hover:text-white transition-colors focus:outline-none">
                 <i data-lucide="x" class="w-5 h-5"></i>
@@ -263,7 +263,7 @@
         // Spam Protection Obfuscator: dynamically assembles email in memory
         document.addEventListener("DOMContentLoaded", () => {
             const account = "office";
-            const domain = "shimsystems.au";
+            const domain = "shimsystems.com";
             const assembledEmail = `${account}@${domain}`;
             document.querySelectorAll('.shim-contact').forEach(element => {
                 element.href = `mailto:${assembledEmail}`;
