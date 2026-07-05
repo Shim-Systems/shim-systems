@@ -84,9 +84,9 @@
                 Operating under a strict UI-Only Storage Boundary, our system processes sensitive organizational files in transient container memory (RAM) and immediately purges raw inputs post-analysis. We package all state machines, private models, and vector indexes inside unified Docker images deployed directly into secure, dedicated 1U/2U environment hosts sourced from reputable enterprise system integrators.
             </p>
             <div class="flex flex-wrap gap-4 font-mono">
-                <button onclick="document.getElementById('systems-contact-section').scrollIntoView({behavior: 'smooth'})" class="bg-systems-btn text-white px-7 py-3.5 text-xs font-semibold rounded border border-amber-800/10 hover:translate-y-[-1px] transition-all duration-300">
-                    Request Technical Spec
-                </button>
+                <a href="#" class="shim-contact bg-systems-btn text-white px-7 py-3.5 text-xs font-semibold rounded border border-amber-800/10 hover:translate-y-[-1px] transition-all duration-300 block text-center">
+                    Contact Us
+                </a>
                 <button onclick="document.getElementById('systems-frameworks-section').scrollIntoView({behavior: 'smooth'})" class="border border-systems text-[#E6EDF0] px-7 py-3.5 text-xs font-semibold rounded bg-systems-card/30 backdrop-blur-sm hover:border-[#5C768D] hover:bg-systems-card/60 hover:translate-y-[-1px] transition-all duration-300">
                     Our Frameworks
                 </button>
@@ -155,36 +155,13 @@
         </section>
 
         <!-- Architectural Statement / Signature (Polished, Gimmick-Free Design) -->
-        <section class="border-t border-b border-systems/40 py-12 mb-20 text-center bg-[#B2916F]/5 rounded-lg px-6 backdrop-blur-sm">
+        <section class="border-t border-b border-systems/40 py-12 text-center bg-[#B2916F]/5 rounded-lg px-6 backdrop-blur-sm">
             <p class="text-sm italic text-[#E6EDF0] font-medium max-w-lg mx-auto leading-relaxed">
                 "True operational sovereignty requires systems that are local, self-contained, and completely within your own physical custody."
             </p>
             <span class="text-[10px] uppercase font-bold tracking-widest text-[#B2916F] block mt-4.5">
                 — Lead Systems Architect, Shim Systems
             </span>
-        </section>
-
-        <!-- Direct Contact Inquiries Form -->
-        <section id="systems-contact-section" class="border-t border-systems pt-12 mb-16 scroll-mt-6">
-            <h3 class="text-xs uppercase font-extrabold tracking-widest text-[#B2916F] mb-3">// TECHNICAL INQUIRY</h3>
-            <p class="text-xs text-[#8E969F] mb-8 max-w-md font-mono">
-                Please input your structural requirements. We will analyze your network configuration and reply with custom integration specs.
-            </p>
-            <form class="space-y-5 max-w-md font-mono" onsubmit="handleFormSubmit(event)">
-                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                    <div>
-                        <label class="block text-[9px] uppercase font-semibold text-[#8E969F] mb-1.5 tracking-wider">Secure Email</label>
-                        <input type="email" placeholder="name@organisation.org.au" class="w-full bg-[#22252A]/60 border border-systems rounded px-4 py-2.5 text-xs text-[#E6EDF0] focus:outline-none focus:border-[#B2916F] focus:ring-1 focus:ring-[#B2916F]/50 shadow-sm transition-all duration-300" required>
-                    </div>
-                    <div>
-                        <label class="block text-[9px] uppercase font-semibold text-[#8E969F] mb-1.5 tracking-wider">Target Environment</label>
-                        <input type="text" placeholder="e.g. Dedicated 1U Node, Isolated VM" class="w-full bg-[#22252A]/60 border border-systems rounded px-4 py-2.5 text-xs text-[#E6EDF0] focus:outline-none focus:border-[#B2916F] focus:ring-1 focus:ring-[#B2916F]/50 shadow-sm transition-all duration-300" required>
-                    </div>
-                </div>
-                <button type="submit" class="w-full bg-systems-btn text-white py-3 px-4 text-xs font-semibold tracking-wider uppercase transition-all duration-300 rounded border border-amber-800/10 hover:bg-[#9D7E5D]">
-                    Submit Engineering Spec Request
-                </button>
-            </form>
         </section>
     </main>
 
@@ -203,8 +180,8 @@
             </div>
         </div>
         <div class="text-right md:text-right flex flex-col items-center md:items-end gap-1.5">
-            <span class="text-xs text-[#E6EDF0]">Enquiries: <a href="#" class="shim-contact text-[#B2916F] hover:underline decoration-dotted transition-colors duration-300" data-show-text="true"></a></span>
-            <div class="flex gap-2 text-[10px] text-[#8E969F] font-semibold">
+            <span class="text-xs text-[#E6EDF0] font-medium"><a href="#" class="shim-contact text-[#B2916F] hover:underline decoration-dotted transition-colors duration-300">Contact Us</a></span>
+            <div class="flex gap-2 text-[10px] text-[#8E969F] font-semibold font-sans">
                 <button onclick="openPrivacyModal()" class="hover:text-[#B2916F] transition-colors focus:outline-none">[PRIVACY POLICY]</button>
                 <span>//</span>
                 <span>&copy; 2026 Shim Systems.</span>
@@ -229,17 +206,6 @@
         </div>
     </div>
 
-    <!-- Non-blocking custom toast confirmation -->
-    <div id="toast-notification" class="fixed bottom-6 right-6 z-50 hidden items-center gap-3 bg-gray-900 border border-gray-800 px-5 py-4 rounded-lg shadow-2xl max-w-sm animate-bounce font-mono">
-        <div class="p-1.5 bg-emerald-950/20 border border-emerald-800/30 rounded text-emerald-500">
-            <i data-lucide="check" class="w-4 h-4"></i>
-        </div>
-        <div>
-            <h4 class="text-xs font-bold text-white">// ENQUIRY_LOGGED</h4>
-            <p class="text-[10px] text-gray-500 mt-0.5">Parameters validated. We will review your infrastructure stack shortly.</p>
-        </div>
-    </div>
-
     <script>
         // Init icons
         lucide.createIcons();
@@ -250,17 +216,6 @@
         }
         function closePrivacyModal() {
             document.getElementById('privacy-modal').classList.replace('flex', 'hidden');
-        }
-
-        // Handle submissions without using alert()
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            const toast = document.getElementById('toast-notification');
-            toast.classList.replace('hidden', 'flex');
-            event.target.reset();
-            setTimeout(() => {
-                toast.classList.replace('flex', 'hidden');
-            }, 3000);
         }
 
         // Close on window click
@@ -274,13 +229,10 @@
         // Spam Protection Obfuscator: dynamically assembles email in memory
         document.addEventListener("DOMContentLoaded", () => {
             const account = "office";
-            const domain = "shimsystems.com";
+            const domain = "shimsystems.com"; // Both portals route directly to shimsystems.com
             const assembledEmail = `${account}@${domain}`;
             document.querySelectorAll('.shim-contact').forEach(element => {
-                element.href = `mailto:${assembledEmail}`;
-                if (element.getAttribute('data-show-text') === 'true') {
-                    element.textContent = assembledEmail;
-                }
+                element.href = `mailto:${assembledEmail}?subject=Technical%20Inquiry`;
             });
         });
     </script>
