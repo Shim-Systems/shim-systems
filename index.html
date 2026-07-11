@@ -1,225 +1,405 @@
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHIM SYSTEMS | Production-Grade Local AI for Sovereign Environments</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-
+    <title>Shim Systems | Document Extraction for Construction & Engineering</title>
     <style>
         :root {
-            --systems-bg: #1A1C1E;
-            --systems-bg-card: #22252A;
-            --systems-text: #E6EDF0;
-            --systems-text-muted: #8E969F;
-            --systems-accent-copper: #B2916F;
-            --systems-accent-steel: #5C768D;
-            --systems-font: 'JetBrains Mono', monospace;
+            --bg-color: #07090e;
+            --panel-bg: #0d1117;
+            --border-color: #161c24;
+            --border-hover: #222b38;
+            --text-main: #f3f4f6;
+            --text-muted: #8a929e;
+            --accent-cyan: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Monaco, Consolas, monospace;
         }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        ::selection {
+            background-color: var(--accent-glow);
+            color: var(--text-main);
+        }
+
         body {
-            font-family: var(--systems-font);
-            background-color: var(--systems-bg);
-            color: var(--systems-text);
-            letter-spacing: -0.025em;
-            -webkit-font-smoothing: antialiased;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            letter-spacing: -0.015em;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        /* Design Token: Orthogonal Engineering Grid Background */
-        .systems-grid {
-            background-image: 
-                linear-gradient(rgba(92, 118, 141, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(92, 118, 141, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
+
+        header {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem 2rem 2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
         }
-        .border-systems { border-color: rgba(92, 118, 141, 0.20); }
-        .bg-systems-card { background-color: var(--systems-bg-card); }
-        .bg-systems-btn { background-color: var(--systems-accent-copper); }
-        .bg-systems-btn:hover { background-color: #9D7E5D; }
+
+        .logo {
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-cyan);
+            font-weight: 400;
+        }
+
+        .registry-link {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 3px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .registry-link:hover {
+            border-color: var(--text-muted);
+            color: var(--text-main);
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        main {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            flex-grow: 1;
+        }
+
+        .hero {
+            max-width: 750px;
+            margin-bottom: 6rem;
+        }
+
+        .meta-tag {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-cyan);
+            margin-bottom: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-tag::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background-color: var(--accent-cyan);
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 2.85rem;
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 620px;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 6rem;
+        }
+
+        .card {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 4px;
+            position: relative;
+            transition: border-color 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--border-hover);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 2.5rem;
+            right: 2.5rem;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .validation-section {
+            border-top: 1px solid var(--border-color);
+            padding-top: 5rem;
+            margin-bottom: 6rem;
+        }
+
+        .statement {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 800px;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .statement::before {
+            content: "\201C";
+            position: absolute;
+            left: 0;
+            top: -0.25rem;
+            font-size: 3rem;
+            color: var(--border-hover);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .enquiry-section {
+            max-width: 550px;
+            margin-top: 2rem;
+        }
+
+        .enquiry-section h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .enquiry-section p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.75rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.5rem 0;
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            border-radius: 0;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--text-muted);
+        }
+
+        .submit-btn {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            width: auto;
+        }
+
+        .submit-btn:hover {
+            border-color: var(--text-muted);
+            color: var(--text-main);
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        footer {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.02em;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.1rem; }
+            main { padding: 4rem 1.5rem; }
+            header { padding: 2rem 1.5rem; }
+        }
     </style>
 </head>
-<body class="min-h-screen flex flex-col overflow-y-auto relative systems-grid selection:bg-[#B2916F]/20">
+<body>
 
-    <header class="relative z-10 px-8 py-6 border-b border-systems flex items-center justify-between bg-[#1A1C1E]/60 backdrop-blur-md transition-all duration-300">
-        <div class="flex items-center gap-3">
-            <div class="flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="#B2916F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9">
-                    <path d="M6 14 L18 26 C21 29 25 29 28 26 C31 23 31 19 28 16 L16 4 C13 1 9 1 6 4 C3 7 3 11 6 14 Z" fill="#B2916F" fill-opacity="0.12"></path>
-                    <path d="M11 9 L21 19" stroke-width="4.5" stroke="#5C768D"></path>
-                </svg>
-            </div>
-            <div>
-                <span class="font-semibold text-xs tracking-wider text-[#E6EDF0] block">SHIM SYSTEMS //</span>
-                <span class="text-[9px] text-[#B2916F] font-medium tracking-wider block -mt-0.5">SHIMSYSTEMS.COM</span>
-            </div>
-        </div>
-        <nav class="hidden sm:flex items-center gap-6 text-xs text-[#8E969F] uppercase font-medium">
-            <a href="https://shimstudio.com" class="text-xs py-1.5 px-3 border border-systems rounded text-[#B2916F] hover:bg-[#B2916F]/10 transition-all duration-300">STUDIO_BLUEPRINT</a>
-        </nav>
+    <header>
+        <div class="logo">Shim <span>Systems</span></div>
+        <a href="#" id="secure-contact" class="registry-link">Connect</a>
     </header>
 
-    <main class="relative z-10 flex-grow px-8 py-16 max-w-3xl mx-auto flex flex-col justify-center">
-        
-        <div class="mb-14">
-            <div class="inline-flex items-center gap-2 text-xs text-[#8E969F] border border-systems bg-systems-card/40 backdrop-blur-sm px-3.5 py-1.5 rounded mb-6 font-mono">
-                AIR-GAPPED COMPLIANCE STACKS
-            </div>
-            <h2 class="text-2xl md:text-3xl font-bold text-[#E6EDF0] leading-snug mb-5">
-                Sovereign Operational AI.<br>Engineered for Secure Infrastructure.
-            </h2>
-            <p class="text-sm text-[#B2916F] leading-relaxed mb-6 font-medium">
-                > We turn dense regulatory, compliance, and procedural guidelines into secure, local software containers that automate intensive manual review workflows—with 100% data residency guaranteed.
-            </p>
-            <p class="text-xs text-[#8E969F] leading-relaxed mb-10 font-mono">
-                Operating under a strict UI-Only Storage Boundary, our system processes sensitive organisational files in transient container memory (RAM) and immediately purges raw inputs post-analysis. We package all state machines, private models, and vector indexes inside unified Docker images deployed directly into secure, dedicated 1U/2U environment hosts sourced from reputable enterprise system integrators.
-            </p>
-            <div class="flex flex-wrap gap-4 font-mono">
-                <a href="#" class="shim-contact bg-systems-btn text-white px-8 py-4 text-xs font-semibold rounded border border-amber-800/10 hover:translate-y-[-1px] transition-all duration-300 block text-center min-w-[160px]">
-                    Contact Us
-                </a>
-            </div>
-        </div>
+    <main>
+        <section class="hero">
+            <div class="meta-tag">Self-Hosted Deployment</div>
+            <h1>Document extraction built for commercial construction.</h1>
+            <p>Secure software that parses architectural schedules and material data entirely within your local network.</p>
+        </section>
 
-        <section id="systems-frameworks-section" class="border-t border-systems pt-14 mb-20">
-            <div class="flex items-center gap-3 mb-8">
-                <span class="w-6 h-[1px] bg-[#5C768D]/40"></span>
-                <h3 class="text-xs uppercase font-extrabold tracking-widest text-[#5C768D] mb-8">// LOCALISED WORKFLOW ENGINES</h3>
+        <section class="grid">
+            <div class="card">
+                <h3>Complete Data Privacy</h3>
+                <p>All processing occurs inside your private IT environment. Documentation is never transmitted to external endpoints or third-party cloud APIs.</p>
             </div>
-            
-            <div class="grid gap-6">
-                <div class="bg-systems-card/40 backdrop-blur-sm p-6 border border-systems rounded hover:bg-systems-card/75 transition-all duration-300 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-3 text-xs text-[#8E969F]/60 select-none font-mono">
-                        [SYS-01]
-                    </div>
-                    <div class="flex items-start gap-5">
-                        <div class="p-2.5 bg-systems/80 border border-systems rounded text-[#B2916F] group-hover:border-[#B2916F]/40 transition-colors duration-300">
-                            <i data-lucide="file-check-2" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm text-[#E6EDF0] mb-1.5">Structured Ingestion &amp; Compliance Auditing</h4>
-                            <p class="text-xs text-[#8E969F] leading-relaxed font-mono">
-                                Automatically parses complex, unstructured multi-page documents (such as technical portfolios, site logs, or detailed compliance submissions). Uses an isolated local vector database to verify structural data alignment against rigid, pre-defined operational schemas.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-systems-card/40 backdrop-blur-sm p-6 border border-systems rounded hover:bg-systems-card/75 transition-all duration-300 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-3 text-xs text-[#8E969F]/60 select-none font-mono">
-                        [SYS-02]
-                    </div>
-                    <div class="flex items-start gap-5">
-                        <div class="p-2.5 bg-systems/80 border border-systems rounded text-[#5C768D] group-hover:border-[#5C768D]/40 transition-colors duration-300">
-                            <i data-lucide="shield-check" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm text-[#E6EDF0] mb-1.5">Deterministic Multi-Agent Processing</h4>
-                            <p class="text-xs text-[#8E969F] leading-relaxed font-mono">
-                                Orchestrates specialised offline LLM agents (Researcher, Writer, Auditor) using LangGraph state flows. Automatically accelerates intensive drafting, summarisation, and audit routines, backed by a programmatic safety switch that halts execution for human oversight if threshold checks fall below standard criteria.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-systems-card/40 backdrop-blur-sm p-6 border border-systems rounded hover:bg-systems-card/75 transition-all duration-300 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-3 text-xs text-[#8E969F]/60 select-none font-mono">
-                        [SYS-03]
-                    </div>
-                    <div class="flex items-start gap-5">
-                        <div class="p-2.5 bg-systems/80 border border-systems rounded text-zinc-500 group-hover:border-zinc-500/40 transition-colors duration-300">
-                            <i data-lucide="door-closed" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm text-[#E6EDF0] mb-1.5">Sovereign Chat Sandboxes</h4>
-                            <p class="text-xs text-[#8E969F] leading-relaxed font-mono">
-                                Deploys a browser-based local Streamlit UI hooked directly into on-premises infrastructure as a secure alternative to public cloud interfaces. Eliminates standard security risks and prevents unapproved copy-pasting of sensitive organisational assets. Supported by async workers to maintain fluid high-speed performance under peak loads.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div class="card">
+                <h3>Containerised Architecture</h3>
+                <p>Distributed as a standardized, single-node container image for rapid deployment across local infrastructure or dedicated workstations.</p>
+            </div>
+            <div class="card">
+                <h3>Targeted Precision</h3>
+                <p>Optimized specifically for dense engineering matrices, window schedules, and structured tables to prevent tracking errors and contract variations.</p>
             </div>
         </section>
 
-        <section class="border-t border-b border-systems/40 py-12 text-center bg-[#B2916F]/5 rounded-lg px-6 backdrop-blur-sm">
-            <p class="text-sm italic text-[#E6EDF0] font-medium max-w-lg mx-auto leading-relaxed">
-                "True operational sovereignty requires systems that are local, self-contained, and completely within your own physical custody."
-            </p>
-            <span class="text-[10px] uppercase font-bold tracking-widest text-[#B2916F] block mt-4.5">
-                — Lead Systems Architect, Shim Systems
-            </span>
+        <section class="validation-section">
+            <div class="statement">
+                Developed to assist Australian Tier-2 commercial builders and structural engineering firms eliminate manual estimation review overhead and maintain absolute quality assurance.
+            </div>
+        </section>
+
+        <section class="enquiry-section">
+            <h2>Commercial Enquiries</h2>
+            <p>To arrange a local pilot or discuss integration setups, submit your parameters below.</p>
+            
+            <form id="enquiry-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" required autocomplete="off">
+                </div>
+                <button type="submit" class="submit-btn">Submit Enquiry</button>
+            </form>
         </section>
     </main>
 
-    <footer class="max-w-3xl mx-auto w-full border-t border-systems pt-12 pb-8 flex flex-col md:flex-row items-center justify-between gap-6 px-8">
-        <div class="flex items-center gap-3">
-            <div class="flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="#B2916F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8">
-                    <path d="M6 14 L18 26 C21 29 25 29 28 26 C31 23 31 19 28 16 L16 4 C13 1 9 1 6 4 C3 7 3 11 6 14 Z" fill="#B2916F" fill-opacity="0.12"></path>
-                    <path d="M11 9 L21 19" stroke-width="4.5" stroke="#5C768D"></path>
-                </svg>
-            </div>
-            <div>
-                <span class="font-bold text-xs text-[#E6EDF0] block">SHIM SYSTEMS //</span>
-                <span class="text-[10px] text-[#8E969F] font-medium uppercase tracking-wider">Unlocking Productive Time. Safely.</span>
-            </div>
-        </div>
-        <div class="text-right md:text-right flex flex-col items-center md:items-end gap-1.5">
-            <span class="text-xs text-[#E6EDF0] font-medium"><a href="#" class="shim-contact text-[#B2916F] hover:underline decoration-dotted transition-colors duration-300">Contact Us</a></span>
-            <div class="flex gap-2 text-[10px] text-[#8E969F] font-semibold font-sans">
-                <button onclick="openPrivacyModal()" class="hover:text-[#B2916F] transition-colors focus:outline-none">[PRIVACY POLICY]</button>
-                <span>//</span>
-                <span>&copy; 2026 Shim Systems.</span>
-            </div>
-        </div>
+    <footer>
+        <div>&copy; 2026 Shim Systems Pty Ltd. All rights reserved.</div>
     </footer>
 
-    <div id="privacy-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-gray-950/80 backdrop-blur-sm p-4">
-        <div class="bg-gray-900 text-[#E6EDF0] max-w-lg w-full rounded p-8 shadow-2xl border border-gray-800 relative font-mono text-xs">
-            <button onclick="closePrivacyModal()" class="absolute top-6 right-6 text-gray-500 hover:text-white transition-colors focus:outline-none">
-                <i data-lucide="x" class="w-5 h-5"></i>
-            </button>
-            <h3 class="text-lg font-bold text-white mb-4 tracking-tight flex items-center gap-2">
-                <i data-lucide="shield-check" class="w-5 h-5 text-[#B2916F]"></i> Sovereignty &amp; Privacy Policy
-            </h3>
-            <div class="text-[#8E969F] space-y-4 leading-relaxed font-medium">
-                <p>This website operates strictly as a static point of contact. We do not utilise tracking cookies, performance analytics, or third-party marketing trackers of any kind.</p>
-                <p>If you choose to submit an enquiry via our forms, we temporarily collect and process only the contact details and operational parameters you explicitly provide. This information is used solely to respond to your request and is handled with strict confidentiality; we do not share, sell, or distribute it.</p>
-                <p>All software we build is deployed directly into your own private IT environment. We do not host your systems on our web servers, ensuring your business documents, files, and operational tools remain entirely within your own controlled network.</p>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Init icons
-        lucide.createIcons();
+        (function() {
+            const localPart = "office";
+            const domainPart = "shimsystems.com";
+            const cleanEmail = localPart + "@" + domainPart;
 
-        // Privacy Modal Controls
-        function openPrivacyModal() {
-            document.getElementById('privacy-modal').classList.replace('hidden', 'flex');
-        }
-        function closePrivacyModal() {
-            document.getElementById('privacy-modal').classList.replace('flex', 'hidden');
-        }
-
-        // Close on window click
-        window.onclick = function(event) {
-            const modal = document.getElementById('privacy-modal');
-            if (event.target === modal) {
-                closePrivacyModal();
+            const contactLink = document.getElementById("secure-contact");
+            if (contactLink) {
+                contactLink.href = "mailto:" + cleanEmail;
+                contactLink.textContent = cleanEmail;
             }
-        }
 
-        // Spam Protection Obfuscator: dynamically assembles email in memory
-        document.addEventListener("DOMContentLoaded", () => {
-            const account = "office";
-            const domain = "shimsystems.com"; // Both portals route directly to shimsystems.com
-            const assembledEmail = `${account}@${domain}`;
-            document.querySelectorAll('.shim-contact').forEach(element => {
-                element.href = `mailto:${assembledEmail}?subject=Technical%20Inquiry`;
-            });
-        });
+            const form = document.getElementById("enquiry-form");
+            if (form) {
+                form.addEventListener("submit", function(event) {
+                    event.preventDefault();
+
+                    const clientName = document.getElementById("name").value.trim();
+                    const clientEmail = document.getElementById("email").value.trim();
+                    const clientCompany = document.getElementById("company").value.trim();
+
+                    const subject = "Shim Systems Enquiry - " + clientCompany;
+                    const bodyText = "Hello Shim Systems,\n\n" +
+                                     "I would like to discuss deployment details.\n\n" +
+                                     "Name: " + clientName + "\n" +
+                                     "Email: " + clientEmail + "\n" +
+                                     "Company: " + clientCompany + "\n";
+
+                    window.location.href = "mailto:" + cleanEmail + 
+                                           "?subject=" + encodeURIComponent(subject) + 
+                                           "&body=" + encodeURIComponent(bodyText);
+                });
+            }
+        })();
     </script>
 </body>
 </html>
