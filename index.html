@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shim Systems | Document Extraction for Construction & Engineering</title>
+    <title>Shim Systems | Document Processing for Construction & Engineering</title>
     <style>
         :root {
             --bg-color: #07090e;
@@ -212,22 +212,37 @@
             line-height: 1;
         }
 
+        .statement::after {
+            content: "\201D";
+            display: inline-block;
+            font-size: 2.5rem;
+            color: var(--border-hover);
+            font-family: serif;
+            line-height: 1;
+            vertical-align: text-top;
+            margin-left: 0.15rem;
+        }
+
         .enquiry-section {
-            max-width: 550px;
-            margin-top: 2rem;
+            max-width: 600px;
+            margin-top: 4rem;
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 3rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .enquiry-section:hover {
+            border-color: var(--border-hover);
         }
 
         .enquiry-section h2 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .enquiry-section p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
+            letter-spacing: -0.01em;
+            color: var(--text-main);
         }
 
         .form-group {
@@ -275,6 +290,7 @@
             transition: all 0.3s ease;
             display: inline-block;
             width: auto;
+            margin-top: 0.5rem;
         }
 
         .submit-btn:hover {
@@ -302,6 +318,7 @@
             h1 { font-size: 2.1rem; }
             main { padding: 4rem 1.5rem; }
             header { padding: 2rem 1.5rem; }
+            .enquiry-section { padding: 2rem; }
         }
     </style>
 </head>
@@ -315,7 +332,7 @@
     <main>
         <section class="hero">
             <div class="meta-tag">Self-Hosted Deployment</div>
-            <h1>Document extraction built for commercial construction.</h1>
+            <h1>Document processing built for commercial construction.</h1>
             <p>Secure software that parses architectural schedules and material data entirely within your local network.</p>
         </section>
 
@@ -341,8 +358,7 @@
         </section>
 
         <section class="enquiry-section">
-            <h2>Commercial Enquiries</h2>
-            <p>To arrange a local pilot or discuss integration setups, submit your parameters below.</p>
+            <h2>Contact</h2>
             
             <form id="enquiry-form">
                 <div class="form-group">
