@@ -204,7 +204,7 @@ Use:
 
 Current asset groups:
 
-- `public/assets/og-template.png`
+- `public/assets/preview.jpg`
 - `public/favicon.svg`
 - `public/assets/blog/cover.jpg`
 - `public/assets/article-cover.jpg`

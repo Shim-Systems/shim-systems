@@ -1,10 +1,47 @@
 # Design-led Astro Starter
 
-[English](README.md) · [通用演示站](https://design-led-astro-starter.vercel.app/)
+[English](README.md) · [通用演示站](https://ricoui-astro-starter.vercel.app/)
 
-这是一个可复用的 Astro 7 起步模板，适合内容型网站和设计系统驱动的网站。它包含可切换主题 token、MDX 博客、RSS、站点地图和 Elements 组件参考页。仓库与演示站使用相同的通用内容，不包含个人、公司或真实生产站信息。
+一个以设计为驱动的 Astro starter 模板，公开页面保持纯净：Home、Blog、DESIGN.md、Elements。
 
-![通用模板预览](public/assets/og-template.png)
+它适合想先拥有一套完整视觉风格，再快速构建自己项目的人。模板保留了 RicoUI 的编辑感标题字体、暗色模式、可复用 UI 组件、MDX Blog 内容系统，并加入了多主题色切换。
+
+![通用模板预览](public/assets/preview.jpg)
+
+## 在线预览
+
+英文版：[Live demo](https://ricoui-astro-starter.vercel.app/)
+中文版地址：[Live demo zh](https://ricoui-astro-starter-zh.netlify.app/)
+
+
+## 主题
+
+模板内置 10 套可切换的主题配色。它们都覆盖同一套语义 token，因此切换主题只改变页面气质，所有组件依旧保持一致。默认主题为 Retro Blue，其余主题可在主题切换器中一键切换。
+
+<table>
+  <tr>
+    <td width="50%" align="center"><img src="docs/preview/Retro%20Blue.jpg" alt="Retro Blue 主题" width="100%" /><br><sub><b>Retro Blue</b><br>温暖的编辑感蓝 + 金 · 默认</sub></td>
+    <td width="50%" align="center"><img src="docs/preview/Minimal%20Mono.jpg" alt="Minimal Mono 主题" width="100%" /><br><sub><b>Minimal Mono</b><br>克制的黑白与暖灰</sub></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><img src="docs/preview/Forest%20Green.jpg" alt="Forest Green 主题" width="100%" /><br><sub><b>Forest Green</b><br>沉静的植物系绿</sub></td>
+    <td width="50%" align="center"><img src="docs/preview/Vellum%20Ink.jpg" alt="Vellum Ink 主题" width="100%" /><br><sub><b>Vellum Ink</b><br>温暖羊皮纸 + 墨色</sub></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><img src="docs/preview/Creator%20Yellow.jpg" alt="Creator Yellow 主题" width="100%" /><br><sub><b>Creator Yellow</b><br>明亮的创作者经济黄</sub></td>
+    <td width="50%" align="center"><img src="docs/preview/Precision%20Orange.jpg" alt="Precision Orange 主题" width="100%" /><br><sub><b>Precision Orange</b><br>技术中性 + 橙色信号</sub></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><img src="docs/preview/Comic%20Pulp.jpg" alt="Comic Pulp 主题" width="100%" /><br><sub><b>Comic Pulp</b><br>柔和的漫画感</sub></td>
+    <td width="50%" align="center"><img src="docs/preview/Midnight%20Pastel.jpg" alt="Midnight Pastel 主题" width="100%" /><br><sub><b>Midnight Pastel</b><br>暗色工作台 + 柔和粉彩</sub></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><img src="docs/preview/Sky%20Blue.jpg" alt="Sky Blue 主题" width="100%" /><br><sub><b>Sky Blue</b><br>淡蓝白产品色</sub></td>
+    <td width="50%" align="center"><img src="docs/preview/Signal%20Red.jpg" alt="Signal Red 主题" width="100%" /><br><sub><b>Signal Red</b><br>务实的企业红强调</sub></td>
+  </tr>
+</table>
+
+在 `src/config/themes.js` 中设置 `defaultThemeId` 选择默认主题，或在生产站关闭主题切换器。
 
 ## 技术栈
 
@@ -68,7 +105,7 @@ pnpm build
 pnpm preview
 ```
 
-构建前设置 `PUBLIC_SITE_URL` 为最终部署地址；它会用于 canonical URL、sitemap、RSS 和 Open Graph 元数据。审核演示站固定为 `https://design-led-astro-starter.vercel.app/`，应部署这个仓库的原样构建。后续为自己的站点定制时，请使用独立部署地址。
+构建前设置 `PUBLIC_SITE_URL` 为最终部署地址；它会用于 canonical URL、sitemap、RSS 和 Open Graph 元数据。审核演示站固定为 `https://ricoui-astro-starter.vercel.app/`，应部署这个仓库的原样构建。后续为自己的站点定制时，请使用独立部署地址。
 
 ## 许可证
 

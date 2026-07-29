@@ -188,7 +188,7 @@ Relevant files:
 - `src/components/widgets/Meta.astro`
 - `src/components/widgets/TrackGa.astro`
 - `src/pages/rss.xml.js`
-- `public/assets/og-template.png`
+- `public/assets/preview.jpg`
 - `public/robots.txt`
 
 Environment variables:

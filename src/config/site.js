@@ -1,4 +1,4 @@
-const SITE_URL = import.meta.env.PUBLIC_SITE_URL || "https://design-led-astro-starter.vercel.app";
+const SITE_URL = import.meta.env.PUBLIC_SITE_URL || "https://ricoui-astro-starter.vercel.app";
 
 export const siteConfig = {
 	title: "Design-led Astro Starter",
@@ -15,7 +15,7 @@ export const siteConfig = {
 			"A generic Astro 7 starter for design-driven sites, with Blog, DESIGN.md, Elements, Tailwind CSS v4, MDX, and a reusable theme system.",
 		keywords:
 			"astro starter, astro 7 template, design system, tailwind css, mdx blog, website theme",
-		image: `${SITE_URL}/assets/og-template.png`,
+		image: `${SITE_URL}/assets/preview.jpg`,
 		twitterHandle: "",
 	},
 	social: {
