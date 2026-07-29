@@ -1,5 +1,5 @@
 {
-	"name": "ricoui-astro-starter",
+	"name": "design-led-astro-starter",
 	"type": "module",
 	"version": "1.0.0",
 	"packageManager": "pnpm@9.14.2",
@@ -19,11 +19,7 @@
 		"responsive",
 		"typescript"
 	],
-	"author": {
-		"name": "RicoUI",
-		"email": "hello@ricoui.com",
-		"url": "https://ricoui.com"
-	},
+	"author": "Template Maintainers",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ricocc/ricoui-astro-starter.git"
@@ -46,20 +42,20 @@
 		"check": "biome check --apply-unsafe ."
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.9.9",
+		"@astrojs/check": "^0.9.10",
 		"@biomejs/biome": "1.7.3",
 		"@tailwindcss/typography": "^0.5.13",
-		"astro": "^6.4.2",
+		"astro": "^7.1.5",
 		"postcss": "^8.4.31",
 		"tailwindcss": "^4.1.14",
 		"typescript": "^5.4.5",
 		"vite": "^7.3.3"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^6.0.1",
-		"@astrojs/rss": "^4.0.18",
+		"@astrojs/mdx": "^7.0.5",
+		"@astrojs/rss": "^4.0.19",
 		"@astrojs/sitemap": "^3.7.3",
-		"@lucide/astro": "^1.17.0",
+		"@lucide/astro": "^1.27.0",
 		"@tailwindcss/vite": "^4.1.14",
 		"sharp": "^0.34.4"
 	}

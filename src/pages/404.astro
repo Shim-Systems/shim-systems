@@ -1,11 +1,10 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
 import Button from "@/components/ui/Button.astro";
-import { ArrowLeft, Compass, House, Mail, Search, ShieldAlert } from "@lucide/astro";
-import { siteConfig } from "@/config/site";
+import { ArrowLeft, Compass, House, Search, ShieldAlert } from "@lucide/astro";
 ---
 
-<PageLayout title="Page Not Found - RicoUI Astro Starter" description="The page you're looking for doesn't exist.">
+<PageLayout title="Page Not Found - Design-led Astro Starter" description="The page you're looking for doesn't exist.">
   <section class="site-container py-14 md:py-24">
     <div class="grid min-h-[62vh] items-center gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(420px,1fr)]">
       <div>
@@ -19,15 +18,12 @@ import { siteConfig } from "@/config/site";
         </h1>
 
         <p class="mt-5 max-w-xl text-base leading-8 text-neutral-600 dark:text-neutral-300">
-          The link may be outdated, mistyped, or still waiting to be built. Start from a known page, or send us the broken URL so we can trace it.
+			The link may be outdated, mistyped, or still waiting to be built. Start again from one of the documented starter routes.
         </p>
 
         <div class="mt-7 flex flex-wrap gap-3">
           <Button url="/" type="fill">
             <ArrowLeft size={16} /> Back to Home
-          </Button>
-          <Button url={`mailto:${siteConfig.mail}?subject=Broken%20link%20on%20RicoUI%20Astro%20Starter`}>
-            <Mail size={16} /> Report link
           </Button>
         </div>
 

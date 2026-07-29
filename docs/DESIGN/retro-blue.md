@@ -1,6 +1,6 @@
 # Retro Blue Theme
 
-Retro Blue is the default RicoUI Astro Starter theme. It pairs a warm paper canvas with editorial blue headings, soft blue accents, and a small gold highlight.
+Retro Blue is the default starter theme. It pairs a warm paper canvas with editorial blue headings, soft blue accents, and a small gold highlight.
 
 ## Runtime
 
@@ -45,6 +45,6 @@ Retro Blue is the default RicoUI Astro Starter theme. It pairs a warm paper canv
 
 ## Guidance
 
-- Use this theme when you want the original RicoUI personality.
+- Use this theme when you want an editorial, warm-paper direction.
 - Keep gold as a restrained secondary accent, not a second primary brand color.
 - Preserve the warm canvas in light mode; it is part of the theme identity.

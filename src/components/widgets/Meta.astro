@@ -16,7 +16,7 @@ const {
   keywords = siteConfig.meta.keywords,
   url = siteConfig.url,
   image = siteConfig.meta.image,
-  twitterHandle = siteConfig.social.twitterName,
+  twitterHandle = siteConfig.meta.twitterHandle,
 } = Astro.props;
 
 // 构建完整的页面标题
@@ -30,7 +30,7 @@ const canonicalUrl = url || siteConfig.url;
 <title>{metaTitle}</title>
 <meta name="description" content={metaDescription} />
 <meta name="keywords" content={keywords} />
-<meta name="author" content={siteConfig.author} />
+{siteConfig.author && <meta name="author" content={siteConfig.author} />}
 <link rel="canonical" href={canonicalUrl} />
 
 <!-- Open Graph Tags -->
@@ -47,8 +47,8 @@ const canonicalUrl = url || siteConfig.url;
 <meta name="twitter:title" content={metaTitle} />
 <meta name="twitter:description" content={metaDescription} />
 <meta name="twitter:image" content={ogImage} />
-<meta name="twitter:site" content={twitterHandle} />
-<meta name="twitter:creator" content={twitterHandle} />
+{twitterHandle && <meta name="twitter:site" content={twitterHandle} />}
+{twitterHandle && <meta name="twitter:creator" content={twitterHandle} />}
 
 <!-- Additional Meta Tags -->
 <meta name="robots" content="index, follow" />

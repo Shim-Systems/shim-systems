@@ -17,7 +17,7 @@ export const themes = [
 		id: "retro-blue",
 		name: "Retro Blue",
 		description:
-			"The original RicoUI palette: warm canvas, editorial blue headings, gold highlights, and calm slate neutrals.",
+			"A warm editorial palette with blue headings, gold highlights, and calm slate neutrals.",
 		source: "Default palette",
 		designDoc: "docs/DESIGN/retro-blue.md",
 		details: {
@@ -284,12 +284,12 @@ export const themes = [
 		},
 	},
 	{
-		id: "claude",
-		name: "Claude",
+		id: "vellum-ink",
+		name: "Vellum Ink",
 		description:
 			"A warm vellum theme with creamy paper, articulate ink, restrained borders, and a small terra cotta accent.",
 		source: "Warm vellum palette",
-		designDoc: "docs/DESIGN/claude.md",
+		designDoc: "docs/DESIGN/vellum-ink.md",
 		details: {
 			atmosphere:
 				"Academic journal on vellum: warm off-white surfaces, precise dark text, and a quiet terra cotta accent.",
@@ -824,12 +824,12 @@ export const themes = [
 		},
 	},
 	{
-		id: "rico-red",
-		name: "Rico Red",
+		id: "signal-red",
+		name: "Signal Red",
 		description:
 			"A pragmatic red-accent theme with warm gray-white canvas, strong graphite text, and confident red action.",
 		source: "Red action palette",
-		designDoc: "docs/DESIGN/rico-red.md",
+		designDoc: "docs/DESIGN/signal-red.md",
 		details: {
 			atmosphere:
 				"Cloud control panel on pristine paper: enterprise clarity, warm grays, strong typography, and one confident red action color.",

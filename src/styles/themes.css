@@ -126,7 +126,7 @@ html.dark[data-theme="forest-green"] {
   --color-btn-primary-text: #0f1712;
 }
 
-html[data-theme="claude"] {
+html[data-theme="vellum-ink"] {
   --color-primary: #141413;
   --color-primary-rgb: 20, 20, 19;
   --color-primary-strong: #1f1e1d;
@@ -158,7 +158,7 @@ html[data-theme="claude"] {
   --color-btn-primary-text: #ffffff;
 }
 
-html.dark[data-theme="claude"] {
+html.dark[data-theme="vellum-ink"] {
   --color-primary: #faf9f5;
   --color-primary-rgb: 250, 249, 245;
   --color-primary-strong: #ffffff;
@@ -510,7 +510,7 @@ html.dark[data-theme="sky-blue"] {
   --color-btn-primary-text: #080b1a;
 }
 
-html[data-theme="rico-red"] {
+html[data-theme="signal-red"] {
   --color-primary: #d04841;
   --color-primary-rgb: 208, 72, 65;
   --color-primary-strong: #a83b35;
@@ -542,7 +542,7 @@ html[data-theme="rico-red"] {
   --color-btn-primary-text: #ffffff;
 }
 
-html.dark[data-theme="rico-red"] {
+html.dark[data-theme="signal-red"] {
   --color-primary: #ff867f;
   --color-primary-rgb: 255, 134, 127;
   --color-primary-strong: #ffb3ae;

@@ -1,13 +1,13 @@
-# Claude Theme
+# Vellum Ink Theme
 
-Claude is a warm vellum color theme. It uses creamy paper surfaces, articulate ink text, restrained borders, and a small terra cotta accent.
+Vellum Ink is a warm vellum color theme. It uses creamy paper surfaces, articulate ink text, restrained borders, and a small terra cotta accent.
 
 ## Runtime
 
-- Theme id: `claude`
-- Applied with: `<html data-theme="claude">`
+- Theme id: `vellum-ink`
+- Applied with: `<html data-theme="vellum-ink">`
 - Stored in: `localStorage.theme_id`
-- Dark mode is layered with: `<html class="dark" data-theme="claude">`
+- Dark mode is layered with: `<html class="dark" data-theme="vellum-ink">`
 
 ## Light Tokens
 

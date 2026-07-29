@@ -1,13 +1,13 @@
-# Rico Red Theme
+# Signal Red Theme
 
-Rico Red is a pragmatic red-accent color theme. It uses a warm gray-white canvas, strong graphite text, and confident red action.
+Signal Red is a pragmatic red-accent color theme. It uses a warm gray-white canvas, strong graphite text, and confident red action.
 
 ## Runtime
 
-- Theme id: `rico-red`
-- Applied with: `<html data-theme="rico-red">`
+- Theme id: `signal-red`
+- Applied with: `<html data-theme="signal-red">`
 - Stored in: `localStorage.theme_id`
-- Dark mode is layered with: `<html class="dark" data-theme="rico-red">`
+- Dark mode is layered with: `<html class="dark" data-theme="signal-red">`
 
 ## Light Tokens
 

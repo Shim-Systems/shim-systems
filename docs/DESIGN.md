@@ -1,11 +1,11 @@
-# RicoUI Astro Starter Design System
+# Design-led Astro Starter Design System
 
 
-This document describes the current visual system implemented in the RicoUI Astro Starter.
+This document describes the current visual system implemented in the Design-led Astro Starter.
 
 ## Design Direction
 
-RicoUI Astro Starter uses a calm product-site aesthetic. The default theme is Retro Blue, and additional themes keep the same component rules while changing semantic color tokens.
+Design-led Astro Starter uses a calm product-site aesthetic. The default theme is Retro Blue, and additional themes keep the same component rules while changing semantic color tokens.
 
 - Theme-specific light and dark palettes.
 - Editorial display typography.
@@ -204,10 +204,9 @@ Use:
 
 Current asset groups:
 
-- `public/og.jpg`
-- `public/favicon.png`
-- `public/assets/logo.png`
+- `public/assets/og-template.png`
+- `public/favicon.svg`
 - `public/assets/blog/cover.jpg`
 - `public/assets/article-cover.jpg`
 
-Replace these when adapting RicoUI Astro Starter to a real project.
+Replace these when adapting the starter to a real project.

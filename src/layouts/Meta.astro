@@ -14,19 +14,19 @@ const {
   description,
   keywords = "",
   url = siteConfig.url, //
-  ogImage = "/og.jpg",
-  twitterHandle = siteConfig.social.twitterName || '',
+  ogImage = siteConfig.meta.image,
+  twitterHandle = siteConfig.meta.twitterHandle,
 } = Astro.props;
 ---
 
 <!-- Meta Tags -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <title>{title}</title>
 <meta name="description" content={description} />
 <meta name="keywords" content={keywords} />
-<meta name="author" content={siteConfig.author} />
+{siteConfig.author && <meta name="author" content={siteConfig.author} />}
 
 <!-- Open Graph Tags -->
 <meta property="og:type" content="website" />
@@ -41,5 +41,5 @@ const {
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
-<meta name="twitter:site" content={twitterHandle} />
-<meta name="twitter:creator" content={twitterHandle} />
+{twitterHandle && <meta name="twitter:site" content={twitterHandle} />}
+{twitterHandle && <meta name="twitter:creator" content={twitterHandle} />}
