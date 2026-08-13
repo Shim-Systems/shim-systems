@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shim Systems | Document Processing for Technical Industries</title>
+    <style>
+        :root {
+            --bg-color: #07090e;
+            --panel-bg: #0d1117;
+            --border-color: #161c24;
+            --border-hover: #222b38;
+            --text-main: #f3f4f6;
+            --text-muted: #8a929e;
+            --accent-cyan: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Monaco, Consolas, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        ::selection {
+            background-color: var(--accent-glow);
+            color: var(--text-main);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            letter-spacing: -0.015em;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem 2rem 2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-cyan);
+            font-weight: 400;
+        }
+
+        .registry-link {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 3px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .registry-link:hover {
+            border-color: var(--text-muted);
+            color: var(--text-main);
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        main {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            flex-grow: 1;
+        }
+
+        .hero {
+            max-width: 750px;
+            margin-bottom: 6rem;
+        }
+
+        .meta-tag {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-cyan);
+            margin-bottom: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-tag::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background-color: var(--accent-cyan);
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 2.85rem;
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 620px;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 6rem;
+        }
+
+        .card {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 4px;
+            position: relative;
+            transition: border-color 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--border-hover);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 2.5rem;
+            right: 2.5rem;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .validation-section {
+            border-top: 1px solid var(--border-color);
+            padding-top: 5rem;
+            margin-bottom: 6rem;
+        }
+
+        .statement {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 800px;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .statement::before {
+            content: "\201C";
+            position: absolute;
+            left: 0;
+            top: -0.25rem;
+            font-size: 3rem;
+            color: var(--border-hover);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .statement::after {
+            content: "\201D";
+            display: inline-block;
+            font-size: 2.5rem;
+            color: var(--border-hover);
+            font-family: serif;
+            line-height: 1;
+            vertical-align: text-top;
+            margin-left: 0.15rem;
+        }
+
+        footer {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.02em;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.1rem; }
+            main { padding: 4rem 1.5rem; }
+            header { padding: 2rem 1.5rem; }
+            footer { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Shim <span>Systems</span></div>
+        <a href="#" id="secure-contact" class="registry-link">Connect</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="meta-tag">Self-Hosted Deployment</div>
+            <h1>Document processing built for complex technical specifications.</h1>
+            <p>Secure software that automates document cross-checking and verification entirely within your private network to eliminate compliance gaps.</p>
+        </section>
+
+        <section class="grid">
+            <div class="card">
+                <h3>Complete Data Privacy</h3>
+                <p>All processing occurs inside your private IT environment. Documentation is never transmitted to external endpoints or third-party cloud APIs.</p>
+            </div>
+            <div class="card">
+                <h3>Containerised Architecture</h3>
+                <p>Distributed as a standardised, single-node container image for rapid deployment across local infrastructure or dedicated secure workstations.</p>
+            </div>
+            <div class="card">
+                <h3>Targeted Precision</h3>
+                <p>Optimised for complex datasets and high-density documentation. Utilises a deterministic model to ensure verbatim verification and eliminate compliance gaps.</p>
+            </div>
+        </section>
+
+        <section class="validation-section">
+            <div class="statement">
+                Developed to assist commercial builders, technical consultancies, and compliance-driven enterprises eliminate manual review overhead and maintain absolute quality assurance.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>&copy; 2026 Shim Systems Pty Ltd. All rights reserved.</div>
+        <div>ACN 699 284 636 &bull; Registered in Victoria</div>
+    </footer>
+
+    <script>
+        (function() {
+            const localPart = "office";
+            const domainPart = "shimsystems.com";
+            const cleanEmail = localPart + "@" + domainPart;
+
+            const contactLink = document.getElementById("secure-contact");
+            if (contactLink) {
+                contactLink.href = "mailto:" + cleanEmail;
+                contactLink.textContent = cleanEmail;
+            }
+        })();
+    </script>
+</body>
+</html>
