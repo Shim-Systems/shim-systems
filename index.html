@@ -3,32 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shim Systems | Production-Ready Data & Pipeline Sprints</title>
+    <title>Shim Systems | Enterprise Data & Pipeline Engineering Sprints</title>
     <style>
         :root {
-            /* Palette mapped from reference design */
-            --c-navy: #0a2540;
-            --c-teal: #168aad;
-            --c-sky: #8ecae6;
-            --c-amber: #f59e0b;
-            --c-orange: #d97706;
-
-            /* Light Architectural Theme Mapping */
-            --bg-color: #f8fafc;
-            --panel-bg: #ffffff;
-            --border-color: #e2e8f0;
-            --border-hover: #cbd5e1;
-            --text-main: #0a2540;
-            --text-muted: #475569;
-            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            --font-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Monaco, Consolas, monospace;
-
-            /* Micro-styling Shadows & Curves */
-            --radius-sm: 4px;
-            --radius-md: 6px;
-            --shadow-subtle: 0 1px 3px rgba(10, 37, 64, 0.04), 0 1px 2px rgba(10, 37, 64, 0.02);
-            --shadow-hover: 0 10px 25px -5px rgba(10, 37, 64, 0.08), 0 8px 10px -6px rgba(10, 37, 64, 0.04);
-            --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            --bg-dark: #080a0f;
+            --panel-bg: #0f141c;
+            --panel-border: rgba(255, 255, 255, 0.08);
+            --panel-hover: rgba(255, 255, 255, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-cyan: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --accent-amber: #f59e0b;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+            --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -42,8 +35,8 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
             font-family: var(--font-sans);
             line-height: 1.6;
             letter-spacing: -0.015em;
@@ -51,21 +44,24 @@
             flex-direction: column;
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 60%, rgba(245, 158, 11, 0.03) 0%, transparent 40%);
+            background-attachment: fixed;
         }
 
+        /* Fixed Navigation Bar */
         header {
-            max-width: 1100px;
+            max-width: 1200px;
             width: 100%;
             margin: 0 auto;
-            padding: 1.75rem 2rem;
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            background-color: rgba(248, 250, 252, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--panel-border);
+            background-color: rgba(8, 10, 15, 0.8);
+            backdrop-filter: blur(16px);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -73,422 +69,441 @@
 
         .logo {
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: var(--text-main);
+            color: var(--text-primary);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.65rem;
-            transition: var(--transition-smooth);
-        }
-
-        .logo:hover {
-            opacity: 0.85;
+            gap: 0.75rem;
         }
 
         .logo-icon {
-            width: 24px;
-            height: 24px;
-            flex-shrink: 0;
-            transition: var(--transition-smooth);
-        }
-
-        .logo:hover .logo-icon {
-            transform: rotate(-4deg) scale(1.05);
+            width: 26px;
+            height: 26px;
         }
 
         .logo span {
-            color: var(--c-teal);
+            color: var(--accent-cyan);
             font-weight: 400;
         }
 
         nav {
             display: flex;
             align-items: center;
-            gap: 1.75rem;
+            gap: 2rem;
         }
 
         nav a {
             font-family: var(--font-mono);
             font-size: 0.75rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             text-decoration: none;
-            transition: var(--transition-smooth);
-            position: relative;
+            transition: var(--transition);
         }
 
-        nav a:not(.cta-link):hover {
-            color: var(--text-main);
+        nav a:not(.cta-btn):hover {
+            color: var(--text-primary);
         }
 
-        .cta-link {
+        .cta-btn {
             font-family: var(--font-mono);
             font-size: 0.75rem;
             letter-spacing: 0.05em;
-            color: var(--c-orange);
-            text-decoration: none;
-            border: 1px solid var(--c-orange);
-            padding: 0.5rem 1rem;
+            color: var(--bg-dark);
+            background-color: var(--text-primary);
+            border: 1px solid var(--text-primary);
+            padding: 0.55rem 1.1rem;
             border-radius: var(--radius-sm);
-            transition: var(--transition-smooth);
-            background-color: transparent;
+            text-decoration: none;
             font-weight: 600;
+            transition: var(--transition);
         }
 
-        .cta-link:hover {
-            background-color: var(--c-orange);
-            color: #ffffff;
-            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
-            transform: translateY(-1px);
+        .cta-btn:hover {
+            background-color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px var(--accent-glow);
         }
 
         main {
-            max-width: 1100px;
+            max-width: 1200px;
             width: 100%;
             margin: 0 auto;
             padding: 5rem 2rem;
             flex-grow: 1;
         }
 
-        section {
-            margin-bottom: 6rem;
+        /* Hero Section */
+        .hero {
+            max-width: 860px;
+            margin-bottom: 4.5rem;
         }
 
-        .hero {
-            max-width: 820px;
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-cyan);
+            background: rgba(56, 189, 248, 0.06);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 0.35rem 0.85rem;
+            border-radius: 100px;
+            margin-bottom: 1.75rem;
+        }
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent-cyan);
         }
 
         h1 {
-            font-size: 2.85rem;
+            font-size: 3.25rem;
             font-weight: 700;
-            line-height: 1.15;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
-            letter-spacing: -0.035em;
-            color: var(--text-main);
-        }
-
-        h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            line-height: 1.25;
-            margin-bottom: 1rem;
-            letter-spacing: -0.025em;
-            color: var(--text-main);
+            letter-spacing: -0.04em;
+            color: var(--text-primary);
         }
 
         .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
+            font-size: 1.25rem;
+            color: var(--text-secondary);
             max-width: 720px;
             font-weight: 400;
-            line-height: 1.65;
-            margin-bottom: 2.25rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
         }
 
         .hero-actions {
             display: flex;
-            gap: 1rem;
+            gap: 1.25rem;
             align-items: center;
             flex-wrap: wrap;
         }
 
         .btn-primary {
             font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: #ffffff;
-            background-color: var(--c-teal);
-            border: 1px solid var(--c-teal);
-            padding: 0.7rem 1.35rem;
+            font-size: 0.825rem;
+            color: var(--bg-dark);
+            background-color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+            padding: 0.75rem 1.6rem;
             border-radius: var(--radius-sm);
             text-decoration: none;
             font-weight: 600;
-            transition: var(--transition-smooth);
-            box-shadow: 0 2px 6px rgba(22, 138, 173, 0.25);
+            transition: var(--transition);
         }
 
         .btn-primary:hover {
-            background-color: #127493;
-            border-color: #127493;
-            transform: translateY(-1.5px);
-            box-shadow: 0 6px 16px rgba(22, 138, 173, 0.35);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
+            transform: translateY(-1px);
         }
 
         .btn-secondary {
             font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: var(--c-orange);
-            border: 1px solid var(--c-orange);
-            padding: 0.7rem 1.35rem;
+            font-size: 0.825rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--panel-border);
+            padding: 0.75rem 1.6rem;
             border-radius: var(--radius-sm);
             text-decoration: none;
-            transition: var(--transition-smooth);
-            background-color: transparent;
-            font-weight: 600;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.02);
         }
 
         .btn-secondary:hover {
-            background-color: rgba(217, 119, 6, 0.08);
-            transform: translateY(-1.5px);
-            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.15);
+            color: var(--text-primary);
+            border-color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.05);
         }
 
-        .btn-primary:active, .btn-secondary:active, .cta-link:active {
-            transform: translateY(0);
+        /* Metrics Bar */
+        .metrics-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            padding: 2rem;
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-md);
+            margin-bottom: 6rem;
         }
 
-        .section-desc {
-            font-size: 1.05rem;
+        .metric-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .metric-value {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.03em;
+            font-family: var(--font-mono);
+        }
+
+        .metric-value span {
+            color: var(--accent-cyan);
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            max-width: 700px;
+        }
+
+        /* Section Titles */
+        .section-header {
             margin-bottom: 2.5rem;
         }
 
-        /* Microstyled Matrix / Table */
-        .table-container {
-            width: 100%;
-            overflow-x: auto;
-            border: 1px solid var(--border-color);
-            border-top: 3px solid var(--c-teal);
-            border-radius: var(--radius-md);
-            background-color: var(--panel-bg);
-            box-shadow: var(--shadow-subtle);
-            transition: var(--transition-smooth);
-        }
-
-        .table-container:hover {
-            box-shadow: var(--shadow-hover);
-        }
-
-        .matrix-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.875rem;
-        }
-
-        .matrix-table th {
+        .section-tag {
             font-family: var(--font-mono);
             font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--c-navy);
-            background-color: #f1f5f9;
-            padding: 1.25rem 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .matrix-table td {
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            vertical-align: top;
-            color: var(--text-muted);
-            line-height: 1.55;
-            transition: background-color 0.15s ease;
-        }
-
-        .matrix-table tr:hover td {
-            background-color: #f8fafc;
-        }
-
-        .matrix-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .matrix-table td strong {
-            color: var(--text-main);
+            letter-spacing: 0.15em;
+            color: var(--accent-cyan);
+            margin-bottom: 0.5rem;
             display: block;
-            margin-bottom: 0.35rem;
-            font-weight: 600;
-            font-size: 0.925rem;
         }
 
-        .code-tag {
-            font-family: var(--font-mono);
-            font-size: 0.725rem;
-            color: var(--c-orange);
-            background-color: #fffbe3;
-            border: 1px solid #fde68a;
-            padding: 0.25rem 0.55rem;
-            border-radius: 3px;
-            display: inline-block;
-            font-weight: 600;
-            letter-spacing: 0.02em;
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
         }
 
-        /* Card Grid Microstyling */
-        .grid {
+        /* Bento Grid Services */
+        .bento-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(12, 1fr);
             gap: 1.5rem;
+            margin-bottom: 6rem;
         }
 
-        .card {
-            background-color: var(--panel-bg);
-            border: 1px solid var(--border-color);
-            border-top: 3px solid var(--c-teal);
-            padding: 2.25rem 2rem;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-subtle);
-            transition: var(--transition-smooth);
-        }
-
-        .card:hover {
-            border-top-color: var(--c-amber);
-            border-color: var(--border-hover);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .card h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 0.85rem;
-            color: var(--text-main);
-            letter-spacing: -0.01em;
-        }
-
-        .card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* Capabilities Layout Microstyling */
-        .capabilities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .capability-item {
-            background-color: var(--panel-bg);
-            border: 1px solid var(--border-color);
-            border-top: 3px solid var(--c-sky);
-            padding: 2.25rem 2rem;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-subtle);
-            transition: var(--transition-smooth);
-        }
-
-        .capability-item:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--border-hover);
-            border-top-color: var(--c-teal);
-        }
-
-        .capability-item h3 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-            color: var(--text-main);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.75rem;
-        }
-
-        .clean-list {
-            list-style: none;
-        }
-
-        .clean-list li {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            margin-bottom: 0.85rem;
+        .bento-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            transition: var(--transition);
             position: relative;
-            padding-left: 1.35rem;
-            line-height: 1.5;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .clean-list li:last-child {
-            margin-bottom: 0;
+        .bento-card:hover {
+            border-color: var(--panel-hover);
+            transform: translateY(-2px);
         }
 
-        .clean-list li::before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: var(--c-orange);
+        .bento-card.col-7 { grid-column: span 7; }
+        .bento-card.col-5 { grid-column: span 5; }
+        .bento-card.col-12 { grid-column: span 12; }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .bento-card h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .bento-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-pill-row {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-pill {
             font-family: var(--font-mono);
-            font-weight: bold;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--panel-border);
+            padding: 0.3rem 0.65rem;
+            border-radius: var(--radius-sm);
         }
 
-        /* About Section Microstyling */
-        .statement-card {
-            background-color: var(--panel-bg);
-            border: 1px solid var(--border-color);
-            border-left: 4px solid var(--c-teal);
-            padding: 2.75rem 2.5rem;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-subtle);
-            transition: var(--transition-smooth);
+        /* Mock Terminal Component */
+        .terminal-preview {
+            background: #05070a;
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-sm);
+            padding: 1.25rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 1rem;
         }
 
-        .statement-card:hover {
-            box-shadow: var(--shadow-hover);
-        }
-
-        .statement {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            line-height: 1.75;
-        }
-
-        .statement strong {
-            color: var(--text-main);
-        }
-
-        .author-info {
-            margin-top: 1.75rem;
-            padding-top: 1.25rem;
-            border-top: 1px solid var(--border-color);
+        .terminal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 0.35rem;
+        }
+
+        .dot { width: 8px; height: 8px; border-radius: 50%; }
+        .dot.red { background: #ef4444; }
+        .dot.yellow { background: #f59e0b; }
+        .dot.green { background: #10b981; }
+
+        .terminal-code {
+            line-height: 1.7;
+        }
+
+        .terminal-code .kw { color: var(--accent-cyan); }
+        .terminal-code .str { color: #a7c957; }
+        .terminal-code .num { color: var(--accent-amber); }
+
+        /* Pillars Grid */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 6rem;
+        }
+
+        .pillar-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .pillar-card:hover {
+            border-color: var(--panel-hover);
+        }
+
+        .pillar-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .pillar-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Tooling Stack Section */
+        .stack-box {
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            margin-bottom: 6rem;
+        }
+
+        .stack-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stack-col h4 {
             font-family: var(--font-mono);
             font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent-cyan);
+            margin-bottom: 1.25rem;
         }
 
-        .author-info a {
-            color: var(--c-teal);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition-smooth);
+        .stack-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
         }
 
-        .author-info a:hover {
-            color: var(--c-orange);
+        .stack-list li {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
         }
 
-        /* Direct Contact Section Microstyling */
-        .contact-box {
-            background-color: #f0f7fa;
-            border: 1px solid var(--border-color);
-            border-top: 3px solid var(--c-amber);
-            padding: 3.5rem 2.5rem;
-            border-radius: var(--radius-md);
+        .stack-list li::before {
+            content: "—";
+            color: var(--accent-amber);
+            font-family: var(--font-mono);
+        }
+
+        /* Contact CTA Block */
+        .contact-cta {
+            background: linear-gradient(180deg, var(--panel-bg) 0%, rgba(15, 20, 28, 0.4) 100%);
+            border: 1px solid var(--panel-border);
+            border-radius: var(--radius-lg);
+            padding: 4rem 2rem;
             text-align: center;
-            box-shadow: var(--shadow-subtle);
-            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
         }
 
-        .contact-box:hover {
-            box-shadow: var(--shadow-hover);
+        .contact-cta h2 {
+            margin-bottom: 1rem;
         }
 
-        .contact-box h2 {
-            margin-bottom: 0.75rem;
-        }
-
-        .contact-box p {
-            color: var(--text-muted);
+        .contact-cta p {
+            color: var(--text-secondary);
             max-width: 580px;
-            margin: 0 auto 2.25rem auto;
-            font-size: 0.975rem;
+            margin: 0 auto 2.5rem auto;
+            font-size: 1.05rem;
         }
 
-        .contact-details {
+        .contact-links {
             display: flex;
             justify-content: center;
             gap: 2.5rem;
@@ -497,30 +512,27 @@
             flex-wrap: wrap;
         }
 
-        .contact-details a {
-            color: var(--c-teal);
+        .contact-links a {
+            color: var(--accent-cyan);
             text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition-smooth);
+            transition: var(--transition);
         }
 
-        .contact-details a:hover {
-            color: var(--c-orange);
-            text-decoration: underline;
+        .contact-links a:hover {
+            color: var(--text-primary);
         }
 
         footer {
-            max-width: 1100px;
+            max-width: 1200px;
             width: 100%;
             margin: 0 auto;
             padding: 3rem 2rem;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid var(--panel-border);
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-family: var(--font-mono);
             font-size: 0.725rem;
-            letter-spacing: 0.02em;
             color: var(--text-muted);
         }
 
@@ -532,22 +544,21 @@
         .footer-links a {
             color: var(--text-muted);
             text-decoration: none;
-            transition: var(--transition-smooth);
         }
 
         .footer-links a:hover {
-            color: var(--text-main);
+            color: var(--text-primary);
         }
 
-        @media (max-width: 850px) {
-            h1 { font-size: 2.1rem; }
+        @media (max-width: 900px) {
+            h1 { font-size: 2.25rem; }
             main { padding: 3rem 1.5rem; }
             header { padding: 1.25rem 1.5rem; flex-direction: column; gap: 1rem; align-items: flex-start; }
-            nav { flex-wrap: wrap; gap: 1.25rem; }
+            nav { flex-wrap: wrap; gap: 1rem; }
             footer { flex-direction: column; gap: 1rem; align-items: flex-start; }
-            .statement-card { padding: 1.75rem; }
-            .contact-box { padding: 2.5rem 1.5rem; }
-            .matrix-table { min-width: 650px; }
+            
+            .metrics-bar, .pillars-grid, .stack-columns { grid-template-columns: 1fr; }
+            .bento-card.col-7, .bento-card.col-5, .bento-card.col-12 { grid-column: span 12; }
         }
     </style>
 </head>
@@ -555,147 +566,183 @@
 
     <header>
         <a href="#" class="logo">
-            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="var(--c-teal)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 14 L18 26 C21 29 25 29 28 26 C31 23 31 19 28 16 L16 4 C13 1 9 1 6 4 C3 7 3 11 6 14 Z" fill="var(--c-teal)" fill-opacity="0.15"></path>
-                <path d="M11 9 L21 19" stroke-width="4.5" stroke="var(--c-amber)"></path>
+            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="var(--accent-cyan)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 14 L18 26 C21 29 25 29 28 26 C31 23 31 19 28 16 L16 4 C13 1 9 1 6 4 C3 7 3 11 6 14 Z" fill="var(--accent-cyan)" fill-opacity="0.12"></path>
+                <path d="M11 9 L21 19" stroke-width="3.5" stroke="var(--accent-amber)"></path>
             </svg>
             Shim <span>Systems</span>
         </a>
         <nav>
-            <a href="#services">Services</a>
-            <a href="#delivery-model">Delivery Model</a>
-            <a href="#capabilities">Capabilities</a>
-            <a href="#about">About</a>
-            <a href="#" id="nav-contact" class="cta-link">Contact</a>
+            <a href="#solutions">Solutions</a>
+            <a href="#framework">Delivery Framework</a>
+            <a href="#stack">Capabilities</a>
+            <a href="#" id="nav-contact" class="cta-btn">Initiate Discussion</a>
         </nav>
     </header>
 
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <h1>Production-Ready Data & Pipeline Sprints for High-Liability Backlogs</h1>
-            <p>We take backlogged data extraction, parsing, and migration tasks off your internal team so you hit critical product go-live dates without blowing out scope or budget.</p>
+            <div class="badge">
+                <span class="badge-dot"></span> B2B Technical Consultancy
+            </div>
+            <h1>Production-ready data pipelines for high-liability backlogs.</h1>
+            <p>We take backlogged data extraction, schema migrations, and unstructured ingestion off your internal engineering team so you hit go-live deadlines without blowing out scope or budget.</p>
             <div class="hero-actions">
                 <a href="#" id="hero-email" class="btn-primary">Initiate Discussion</a>
                 <a href="https://linkedin.com/in/linkjonmorgan" target="_blank" rel="noopener" class="btn-secondary">LinkedIn Profile</a>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services">
-            <h2>Core Services</h2>
-            <p class="section-desc">We focus entirely on getting the job done: taking messy, unstructured raw data off your hands and returning reliable, verified, and structured artifacts ready for your production environment.</p>
-
-            <div class="table-container">
-                <table class="matrix-table">
-                    <thead>
-                        <tr>
-                            <th>Service Module</th>
-                            <th>Raw / Legacy Inputs</th>
-                            <th>Guaranteed Clean Data Artifact</th>
-                            <th>Target System & Outcome</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Legacy Schema Transformation</strong></td>
-                            <td>Desktop MYOB, legacy WorkflowMax, raw relational database dumps</td>
-                            <td><span class="code-tag">Staging Tables</span><br><br>De-duplicated, validated, and normalised database staging tables</td>
-                            <td>Xero API, Cloud SQL, Modern ERPs — zero operational downtime during transition</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Document Stream Ingestion</strong></td>
-                            <td>Contractor BoQs, trade invoices, unstructured tender PDFs</td>
-                            <td><span class="code-tag">JSON / REST API</span><br><br>Structured JSON / REST API payloads with accurate line-item extraction</td>
-                            <td>SaaS Backend APIs & Accounting Modules — eliminates manual re-entry cost</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Telemetry & ESG Integration</strong></td>
-                            <td>BMS logs, utility CSVs, Scope 3 vendor records</td>
-                            <td><span class="code-tag">Time-Series Metrics</span><br><br>Auditable, time-series metrics aligned to compliance schemas</td>
-                            <td>ASRS, NABERS Engines, Carbon Platforms — instant compliance audit readiness</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- Impact Metrics Bar -->
+        <section class="metrics-bar">
+            <div class="metric-item">
+                <div class="metric-value">30<span>+</span></div>
+                <div class="metric-label">Years Senior Engineering Experience</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">100<span>%</span></div>
+                <div class="metric-label">Private & Air-Gapped Network Ready</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">Zero<span></span></div>
+                <div class="metric-label">Operational Downtime Migrations</div>
             </div>
         </section>
 
-        <!-- Delivery Model Section -->
-        <section id="delivery-model">
-            <h2>The Delivery Model</h2>
-            <p class="section-desc">When go-live deadlines are tight, you need an independent, senior technical partner who takes total accountability for the output without requiring hand-holding or internal supervision.</p>
+        <!-- Solutions Bento Grid -->
+        <section id="solutions">
+            <div class="section-header">
+                <span class="section-tag">Input to Clean Output</span>
+                <h2>Engineering Solutions</h2>
+            </div>
 
-            <div class="grid">
-                <div class="card">
+            <div class="bento-grid">
+                <!-- Bento Item 1 -->
+                <div class="bento-card col-7">
+                    <div>
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>
+                        </div>
+                        <h3>Legacy Schema Transformation</h3>
+                        <p>De-duplicates, validates, and normalizes raw relational database dumps and desktop legacy schemas into clean staging tables ready for modern ERP and API transitions.</p>
+                    </div>
+                    <div class="terminal-preview">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span>schema_transform.py</span>
+                        </div>
+                        <div class="terminal-code">
+                            <span class="kw">INPUT:</span> Desktop MYOB / Legacy Relational Dump<br>
+                            <span class="kw">ACTION:</span> Deterministic Normalisation & Deduplication<br>
+                            <span class="kw">OUTPUT:</span> <span class="str">production.staging_tables</span> [<span class="num">VALIDATED</span>]
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bento Item 2 -->
+                <div class="bento-card col-5">
+                    <div>
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                        </div>
+                        <h3>Document Stream Ingestion</h3>
+                        <p>Extracts line items from trade invoices, contractor Bills of Quantities (BoQs), and unstructured tender PDFs into validated JSON / REST payloads.</p>
+                    </div>
+                    <div class="tech-pill-row">
+                        <span class="tech-pill">JSON Payload</span>
+                        <span class="tech-pill">REST API</span>
+                        <span class="tech-pill">OCR Engine</span>
+                    </div>
+                </div>
+
+                <!-- Bento Item 3 -->
+                <div class="bento-card col-12">
+                    <div>
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        </div>
+                        <h3>Telemetry & ESG Integration</h3>
+                        <p>Parses BMS logs, utility CSVs, and Scope 3 records into auditable time-series metrics formatted directly for ASRS, NABERS, and compliance platforms.</p>
+                    </div>
+                    <div class="tech-pill-row">
+                        <span class="tech-pill">Time-Series Data</span>
+                        <span class="tech-pill">ASRS & NABERS</span>
+                        <span class="tech-pill">Compliance Readiness</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Delivery Framework Section -->
+        <section id="framework">
+            <div class="section-header">
+                <span class="section-tag">A Reliable Pair of Hands</span>
+                <h2>Delivery Model</h2>
+            </div>
+
+            <div class="pillars-grid">
+                <div class="pillar-card">
                     <h3>Outcome-Based Delivery</h3>
-                    <p>You define the required output schema; we take full responsibility for building and executing the extraction, cleansing, and staging pipelines to deliver clean data.</p>
+                    <p>You define the target output schema; we take full responsibility for building, executing, and delivering production-ready staged artifacts.</p>
                 </div>
-                <div class="card">
+                <div class="pillar-card">
                     <h3>Senior Principal Execution</h3>
-                    <p>Direct technical execution from initial scoping to final deployment. No junior delegation, hand-offs, or management layer overhead—your project is handled by an engineer with 30 years of delivery experience.</p>
+                    <p>Direct technical execution from scoping to go-live by an engineer with 30 years of system delivery experience. No junior delegation or management layer overhead.</p>
                 </div>
-                <div class="card">
-                    <h3>Direct B2B Corporate Contract</h3>
-                    <p>Engagements are contracted directly through Shim Systems Pty Ltd as a standard B2B vendor contract, avoiding payroll tax, superannuation, or internal administrative friction.</p>
+                <div class="pillar-card">
+                    <h3>Direct B2B Contracting</h3>
+                    <p>Contracted directly through Shim Systems Pty Ltd as a standard B2B vendor engagement—eliminating payroll tax, superannuation, and admin friction.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Technical Capabilities Section -->
-        <section id="capabilities">
-            <h2>Technical Capabilities</h2>
-            <p class="section-desc">Engineered with auditable, enterprise-grade tooling categories built for seamless handovers and production reliability.</p>
+        <!-- Capability Tooling Stack Section -->
+        <section id="stack" class="stack-box">
+            <div class="section-header">
+                <span class="section-tag">Competency Validation</span>
+                <h2>Technical Capabilities</h2>
+            </div>
 
-            <div class="capabilities-grid">
-                <div class="capability-item">
-                    <h3>Pipelines & Transformation</h3>
-                    <ul class="clean-list">
-                        <li>Data Processing & Analytical Frameworks</li>
+            <div class="stack-columns">
+                <div class="stack-col">
+                    <h4>Pipelines & Data</h4>
+                    <ul class="stack-list">
+                        <li>Analytical Data Frameworks</li>
                         <li>Relational & Staging Databases</li>
-                        <li>Workflow & Pipeline Orchestration</li>
-                        <li>REST & Webhook Integration Infrastructure</li>
+                        <li>Pipeline Orchestration</li>
+                        <li>REST & Webhook Infrastructure</li>
                     </ul>
                 </div>
-
-                <div class="capability-item">
-                    <h3>Unstructured Data</h3>
-                    <ul class="clean-list">
-                        <li>Structural Document Parsing Engines</li>
-                        <li>Local & Cloud Language Models (SLMs / LLMs)</li>
-                        <li>Computer Vision & OCR Services</li>
+                <div class="stack-col">
+                    <h4>Unstructured Processing</h4>
+                    <ul class="stack-list">
+                        <li>Structural Document Parsers</li>
+                        <li>Local & Cloud Language Models</li>
+                        <li>Vision & OCR Services</li>
                     </ul>
                 </div>
-
-                <div class="capability-item">
-                    <h3>Enterprise Integrations</h3>
-                    <ul class="clean-list">
-                        <li>Accounting & ERP Cloud APIs</li>
-                        <li>Telemetry & IoT Stream Parsers</li>
-                        <li>Cloud Databases & Object Storage Stores</li>
+                <div class="stack-col">
+                    <h4>Enterprise Infrastructure</h4>
+                    <ul class="stack-list">
+                        <li>Accounting & ERP APIs</li>
+                        <li>Telemetry Stream Parsers</li>
+                        <li>Cloud Object Storage Stores</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about">
-            <h2>Senior Engineering Leadership</h2>
-            <div class="statement-card">
-                <div class="statement">
-                    Shim Systems is led by <strong>Jon Morgan</strong>, bringing 30 years of systems engineering, automated pipeline architecture, and technical consulting experience. Having co-founded and directed independent technical consultancies, Jon specialises in connecting complex operational datasets, enterprise SaaS platforms, and custom automation infrastructure.
-                </div>
-                <div class="author-info">
-                    <div>Jon Morgan &bull; Principal Engineer</div>
-                    <div><a href="https://linkedin.com/in/linkjonmorgan" target="_blank" rel="noopener">linkedin.com/in/linkjonmorgan &rarr;</a></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Direct Contact Section -->
-        <section id="contact" class="contact-box">
-            <h2>Get in Touch</h2>
-            <p>Facing an upcoming product go-live, client migration deadline, or data pipeline bottleneck? Reach out directly via email or LinkedIn to initiate a technical discussion.</p>
-            <div class="contact-details">
+        <!-- Contact CTA Block -->
+        <section id="contact" class="contact-cta">
+            <span class="section-tag">Initiate Sprint</span>
+            <h2>Facing a go-live deadline or pipeline bottleneck?</h2>
+            <p>Reach out directly via email or LinkedIn to evaluate your raw inputs and discuss scope.</p>
+            <div class="contact-links">
                 <div>Email: <a href="#" id="contact-box-email">contact@shimsystems.com</a></div>
                 <div>LinkedIn: <a href="https://linkedin.com/in/linkjonmorgan" target="_blank" rel="noopener">linkedin.com/in/linkjonmorgan</a></div>
             </div>
