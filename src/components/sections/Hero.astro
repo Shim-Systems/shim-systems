@@ -1,0 +1,27 @@
+---
+import Button from "@/components/ui/Button.astro";
+import content from "@/config/siteContent.json";
+---
+
+<section class="site-container py-16 md:py-24">
+	<div class="space-y-6 max-w-3xl">
+		<div class="space-y-2">
+			<span class="text-xs font-mono uppercase tracking-widest text-[var(--color-text-meta,theme(colors.neutral.500))]">
+				{content.hero.brand} // {content.hero.practice}
+			</span>
+			<h1 class="text-4xl md:text-6xl tracking-tight leading-tight">
+				<span class="block">{content.hero.headlinePrefix}</span>
+				<span class="block text-primary">{content.hero.headlineMain}</span>
+			</h1>
+		</div>
+		
+		<p class="text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-2xl">
+			{content.hero.subtext}
+		</p>
+
+		<div class="flex items-center gap-4 pt-4">
+			<Button url="#services" type="fill">Explore Services</Button>
+			<Button url="#faq">Common Questions</Button>
+		</div>
+	</div>
+</section>

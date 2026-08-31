@@ -1,0 +1,21 @@
+---
+import content from "@/config/siteContent.json";
+---
+
+<section class="site-container py-16 md:py-24" id="process">
+	<div class="mb-12">
+		<span class="text-xs font-mono uppercase tracking-widest text-[var(--color-text-meta,theme(colors.neutral.500))]">
+			Delivery Model
+		</span>
+		<h2 class="mt-2 text-3xl md:text-4xl">A clear path from friction to flow</h2>
+	</div>
+	<div class="grid gap-6 md:grid-cols-2 max-w-4xl">
+		{content.process.map((p, index) => (
+			<div class="rounded-xl border border-primary/10 bg-bg-secondary p-6 dark:border-neutral-700 dark:bg-bg-secondary-dark">
+				<span class="font-mono text-xs font-bold text-primary mb-4 block">0{index + 1}</span>
+				<h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-2">{p.step}</h3>
+				<p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{p.detail}</p>
+			</div>
+		))}
+	</div>
+</section>

@@ -1,0 +1,35 @@
+---
+import content from "@/config/siteContent.json";
+import { Cpu, Workflow, ShieldCheck } from "@lucide/astro";
+
+const serviceIcons = [Cpu, Workflow, ShieldCheck];
+---
+
+<section class="site-container py-16 md:py-24" id="services">
+	<div class="mb-12">
+		<span class="text-xs font-mono uppercase tracking-widest text-[var(--color-text-meta,theme(colors.neutral.500))]">
+			Capabilities
+		</span>
+		<h2 class="mt-2 text-3xl md:text-4xl">Services & Capabilities</h2>
+		<p class="mt-2 text-neutral-600 dark:text-neutral-300 max-w-2xl leading-relaxed">
+			Practical systems architecture designed to eliminate friction and scale institutional clarity.
+		</p>
+	</div>
+
+	<div class="grid gap-5 md:grid-cols-3">
+		{content.services.map((service, index) => {
+			const IconComponent = serviceIcons[index % serviceIcons.length];
+			return (
+				<article
+					class="rounded-xl border border-primary/10 bg-bg-secondary p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(var(--color-primary-rgb),0.08)] dark:border-neutral-700 dark:bg-bg-secondary-dark"
+				>
+					<div class="mb-4 grid h-10 w-10 place-items-center rounded-lg bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary-light">
+						<IconComponent class="h-5 w-5" />
+					</div>
+					<h3 class="mb-2 text-lg font-semibold text-neutral-800 dark:text-neutral-100">{service.title}</h3>
+					<p class="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">{service.description}</p>
+				</article>
+			);
+		})}
+	</div>
+</section>

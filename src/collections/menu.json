@@ -4,15 +4,19 @@
 		"url": "/"
 	},
 	{
-		"name": "Blog",
-		"url": "/blog"
+		"name": "Services",
+		"url": "/#services"
 	},
 	{
-		"name": "Design",
-		"url": "/design"
+		"name": "Process",
+		"url": "/#process"
 	},
 	{
-		"name": "Elements",
-		"url": "/elements"
+		"name": "FAQ",
+		"url": "/#faq"
+	},
+	{
+		"name": "Contact",
+		"url": "/#contact"
 	}
 ]

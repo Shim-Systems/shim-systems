@@ -1,8 +1,8 @@
-const SITE_URL = import.meta.env.PUBLIC_SITE_URL || "https://ricoui-astro-starter.vercel.app";
+const SITE_URL = import.meta.env.PUBLIC_SITE_URL || "https://shim.systems";
 
 export const siteConfig = {
-	title: "Design-led Astro Starter",
-	author: "",
+	title: "SHIM — Systems Practice",
+	author: "SHIM Systems Practice",
 	url: SITE_URL,
 	utm: {
 		source: SITE_URL,
@@ -10,15 +10,15 @@ export const siteConfig = {
 		campaign: "navigation",
 	},
 	meta: {
-		title: "Design-led Astro Starter - Astro 7 template",
+		title: "SHIM — Systems Practice",
 		description:
-			"A generic Astro 7 starter for design-driven sites, with Blog, DESIGN.md, Elements, Tailwind CSS v4, MDX, and a reusable theme system.",
+			"Practical systems architecture for environmental and social-impact enterprises. Reclaim your time, amplify your impact.",
 		keywords:
-			"astro starter, astro 7 template, design system, tailwind css, mdx blog, website theme",
+			"systems architecture, environmental design, sustainable engineering, local first software, python development, operational efficiency",
 		image: `${SITE_URL}/assets/preview.jpg`,
 		twitterHandle: "",
 	},
 	social: {
-		github: "https://github.com/ricocc/ricoui-astro-starter",
+		github: "", // Leave blank or add your company GitHub if you prefer
 	},
 };

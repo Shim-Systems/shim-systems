@@ -1,0 +1,34 @@
+---
+import AccordionItem from "@/components/ui/AccordionItem.astro";
+---
+
+<section class="site-container py-16 md:py-24" id="faq">
+	<div class="mb-12">
+		<span class="text-xs font-mono uppercase tracking-widest text-[var(--color-text-meta,theme(colors.neutral.500))]">
+			Common Questions
+		</span>
+		<h2 class="mt-2 text-3xl md:text-4xl">Everything you need to know</h2>
+	</div>
+
+	<div class="max-w-3xl space-y-2">
+		<AccordionItem 
+			question="Why work with us?" 
+			answer="Standard IT consultants often try to sell you bloated enterprise software or force your team into rigid, generic templates. Behind SHIM is Jon Morgan (linkedin.com/in/jonmorgan)—bringing a career spanning many companies, big and small. Solving these types of operational and system challenges is what I do best, building lean, custom-fitted solutions designed specifically around how your team actually works." 
+		/>
+
+		<AccordionItem 
+			question="What about AI?" 
+			answer="AI is a powerful force multiplier, but it can't fix broken workflows or messy, siloed data—it just automates the noise at scale. We help you fix the mechanics of your core operations first, ensuring that when you do integrate automated tools, they actually drive meaningful results." 
+		/>
+
+		<AccordionItem 
+			question="Where does this live and what systems do you support?" 
+			answer="We meet your team where you already operate. Solutions can be deployed as local-first setups for maximum data control, hosted securely in the cloud, or managed directly through your existing Managed Service Provider (MSP)." 
+		/>
+
+		<AccordionItem 
+			question="Why focus on mission-led enterprises?" 
+			answer="Environmental and social-impact organizations operate under unique constraints with high stakes and lean teams. You shouldn't have to waste hours wrestling with administrative friction or clunky tools." 
+		/>
+	</div>
+</section>
