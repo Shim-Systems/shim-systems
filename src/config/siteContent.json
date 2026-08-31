@@ -11,7 +11,7 @@
     "partOfSpeech": "noun",
     "definition": "The operational chokepoint sitting squarely between raw inputs and final deliverables—where manual handovers, custom spreadsheets, and human friction collide to dictate whether your systems actually create value or just generate more noise."
   },
-  "services": [
+  "solutions": [
     {
       "title": "Intelligence & Visibility",
       "description": "Pulling trapped institutional knowledge out of the noise, turning it into clear, practical metrics and dashboards."

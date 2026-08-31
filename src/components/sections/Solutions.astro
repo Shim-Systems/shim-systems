@@ -5,19 +5,16 @@ import { Cpu, Workflow, ShieldCheck } from "@lucide/astro";
 const serviceIcons = [Cpu, Workflow, ShieldCheck];
 ---
 
-<section class="site-container py-16 md:py-24" id="services">
+<section class="site-container py-16 md:py-24" id="solutions">
 	<div class="mb-12">
 		<span class="text-xs font-mono uppercase tracking-widest text-[var(--color-text-meta,theme(colors.neutral.500))]">
-			Capabilities
+			Core Solutions
 		</span>
-		<h2 class="mt-2 text-3xl md:text-4xl">Services & Capabilities</h2>
-		<p class="mt-2 text-neutral-600 dark:text-neutral-300 max-w-2xl leading-relaxed">
-			Practical systems architecture designed to eliminate friction and scale institutional clarity.
-		</p>
+		<h2 class="mt-2 text-3xl md:text-4xl">Custom infrastructure built around your team.</h2>
 	</div>
 
 	<div class="grid gap-5 md:grid-cols-3">
-		{content.services.map((service, index) => {
+		{content.solutions.map((service, index) => {
 			const IconComponent = serviceIcons[index % serviceIcons.length];
 			return (
 				<article
