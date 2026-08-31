@@ -41,16 +41,20 @@
       "answer": "Every organisation has unique rhythms, and off-the-shelf tools can only take you so far. We focus on building lean, custom-fitted solutions designed specifically around how your team actually works—drawing on decades of hands-on experience solving complex operational and system challenges across companies of all sizes."
     },
     {
-      "question": "What about AI?",
-      "answer": "AI is a powerful force multiplier, but it thrives on clarity. We help you fix the mechanics of your core operations first, ensuring that when you integrate automated tools, they actually drive meaningful results for your team."
-    },
-    {
-      "question": "Where does this live and what systems do you support?",
-      "answer": "We meet your team where you already operate. Solutions can be deployed as local-first setups for maximum data control, hosted securely in the cloud, or managed directly through your existing Managed Service Provider (MSP)."
-    },
-    {
       "question": "Why focus on mission-led enterprises?",
       "answer": "Environmental and social-impact organisations operate under unique constraints with high stakes and lean teams. You deserve systems that remove administrative friction so you can focus entirely on your impact."
+    },
+    {
+      "question": "Where does this live and how is it maintained?",
+      "answer": "We build around your team's existing workflow. Solutions can run locally on your infrastructure for absolute data privacy, or be deployed to a secure private cloud. Because everything is accessed seamlessly through a standard web browser, you avoid brittle desktop installations and keep maintenance overhead practically zero across different operating systems."
+    },
+    {
+      "question": "How do you handle automated workflows and integrations?",
+      "answer": "We integrate robust, visual workflow automation directly into your stack to handle data handovers and syncing between your tools. This replaces fragile custom scripts or manual workarounds with auditable, reliable systems that run quietly in the background."
+    },
+    {
+      "question": "What about AI?",
+      "answer": "AI is just one tool in our toolbox, not a silver bullet. When it genuinely adds leverage, we weave intelligent automation directly into the backend of your custom systems to handle complex processing or handovers. But we treat it as an engine component—backed by solid operational design—rather than a buzzword or an afterthought."
     }
   ],
   "cta": {
