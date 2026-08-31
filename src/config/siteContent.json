@@ -25,7 +25,7 @@
       "description": "Designing internal knowledge hubs and custom CRMs that keep project histories and teams perfectly synced."
     }
   ],
-"process": [
+  "process": [
     {
       "step": "Architecture & Prototyping",
       "detail": "We map your team’s daily workflow and rapidly build an interactive prototype. You test the logic live, refine how data flows, and lock down the blueprint when it feels entirely right."
@@ -35,7 +35,25 @@
       "detail": "We build out the robust, production-grade system and weave it directly into your team's existing rhythm, ensuring clear documentation and total ownership from day one."
     }
   ],
-"cta": {
+  "faq": [
+    {
+      "question": "Why work with us?",
+      "answer": "Every organisation has unique rhythms, and off-the-shelf tools can only take you so far. We focus on building lean, custom-fitted solutions designed specifically around how your team actually works—drawing on decades of hands-on experience solving complex operational and system challenges across companies of all sizes."
+    },
+    {
+      "question": "What about AI?",
+      "answer": "AI is a powerful force multiplier, but it thrives on clarity. We help you fix the mechanics of your core operations first, ensuring that when you integrate automated tools, they actually drive meaningful results for your team."
+    },
+    {
+      "question": "Where does this live and what systems do you support?",
+      "answer": "We meet your team where you already operate. Solutions can be deployed as local-first setups for maximum data control, hosted securely in the cloud, or managed directly through your existing Managed Service Provider (MSP)."
+    },
+    {
+      "question": "Why focus on mission-led enterprises?",
+      "answer": "Environmental and social-impact organisations operate under unique constraints with high stakes and lean teams. You deserve systems that remove administrative friction so you can focus entirely on your impact."
+    }
+  ],
+  "cta": {
     "headline": "Ready to bring clarity to your operations?",
     "warning": "Fix your workflows first to turn your systems into a force multiplier.",
     "buttonText": "Get in touch",

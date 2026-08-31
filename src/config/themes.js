@@ -1,6 +1,6 @@
 export const themeSettings = {
 	// Set this to the theme id you want to use as the starter default.
-	defaultThemeId: "creator-yellow",
+	defaultThemeId: "signal-red",
 	// Disable this for production sites that should not expose theme choices.
 	showThemeSwitcher: false,
 	// Disable this with showThemeSwitcher when you want the configured default to always win.
