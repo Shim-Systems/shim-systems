@@ -4,7 +4,7 @@
     "practice": "Systems Practice",
     "headlinePrefix": "Reclaim your time.",
     "headlineMain": "Amplify your impact.",
-    "subtext": "Mission-driven teams shouldn't lose hours to operational friction. We provide practical systems architecture for environmental and social-impact enterprises—replacing the mess with streamlined tools that let you focus on the work that matters."
+    "subtext": "Growing organisations shouldn't lose hours to operational friction. We build practical systems architecture—replacing the mess with streamlined tools that let you focus on the work that matters."
   },
   "dictionary": {
     "term": "The Messy Middle",
@@ -13,26 +13,34 @@
   },
   "solutions": [
     {
-      "title": "Intelligence & Visibility",
-      "description": "Pulling trapped institutional knowledge out of the noise, turning it into clear, practical metrics and dashboards."
+      "title": "Institutional Visibility",
+      "description": "Turning scattered project history and trapped knowledge into clear, practical metrics and lean dashboards that keep your whole team aligned."
     },
     {
-      "title": "Core Workflows",
-      "description": "Replacing fragile workflow duct-tape—manual handovers and clumsy workarounds—with resilient, local-first tools."
+      "title": "Streamlined Workflows",
+      "description": "Designing smooth operational paths—from spreadsheet detox and custom workflow triggers to daily execution—that keep projects moving without the friction."
     },
     {
-      "title": "Stakeholder Alignment",
-      "description": "Designing internal knowledge hubs and custom CRMs that keep project histories and teams perfectly synced."
+      "title": "Unified Context Hubs",
+      "description": "Building automated document pipelines and centralised knowledge spaces that keep project histories, field data, and team members seamlessly synced from start to finish.  "
     }
   ],
   "process": [
     {
-      "step": "Architecture & Prototyping",
-      "detail": "We map your team’s daily workflow and rapidly build an interactive prototype. You test the logic live, refine how data flows, and lock down the blueprint when it feels entirely right."
+      "step": "The Diagnostic",
+      "detail": "We talk directly with your team to understand how daily work actually happens, pinpointing where hours are getting lost in the messy middle."
     },
     {
-      "step": "Implementation & Adoption",
-      "detail": "We build out the robust, production-grade system and weave it directly into your team's existing rhythm, ensuring clear documentation and total ownership from day one."
+      "step": "The Clarity Brief",
+      "detail": "We distill our findings into a sharp, actionable brief that highlights your core operational chokepoints and clearly maps out the path forward."
+    },
+    {
+      "step": "The Working Prototype",
+      "detail": "We build a quick, interactive model of the solution so your team can test the logic live, refine the data flow, and lock down a blueprint that feels entirely right."
+    },
+    {
+      "step": "The Clean Build",
+      "detail": "We build out the production-grade system and weave it directly into your team's rhythm, leaving you with streamlined tools and total ownership from day one."
     }
   ],
   "faq": [
@@ -41,16 +49,20 @@
       "answer": "Every organisation has unique rhythms, and off-the-shelf tools can only take you so far. We focus on building lean, custom-fitted solutions designed specifically around how your team actually works—drawing on decades of hands-on experience solving complex operational and system challenges across companies of all sizes."
     },
     {
-      "question": "Why focus on mission-led enterprises?",
-      "answer": "Environmental and social-impact organisations operate under unique constraints with high stakes and lean teams. You deserve systems that remove administrative friction so you can focus entirely on your impact."
+      "question": "How do you handle spreadsheet detox and lean dashboards?",
+      "answer": "We untangle, debug, and replace fragile, multi-user spreadsheets that have become single points of failure, transforming them alongside your reporting loops into clean, automated lean dashboards."
+    },
+    {
+      "question": "What about document pipelines and integration glue?",
+      "answer": "We automate the heavy lifting of ingesting and parsing unstructured files or PDFs through robust document pipelines, while using streamlined integration glue to bridge disconnected software silos and stop manual copy-pasting."
+    },
+    {
+      "question": "How do context hubs and workflow triggers fit in?",
+      "answer": "We build centralised context hubs so your team stops hunting across scattered folders, backed by reliable workflow triggers and deterministic handoffs that prevent tasks from falling through the cracks."
     },
     {
       "question": "Where does this live and how is it maintained?",
-      "answer": "We build around your team's existing workflow. Solutions can run locally on your infrastructure for absolute data privacy, or be deployed to a secure private cloud. Because everything is accessed seamlessly through a standard web browser, you avoid brittle desktop installations and keep maintenance overhead practically zero across different operating systems."
-    },
-    {
-      "question": "How do you handle automated workflows and integrations?",
-      "answer": "We integrate robust, visual workflow automation directly into your stack to handle data handovers and syncing between your tools. This replaces fragile custom scripts or manual workarounds with auditable, reliable systems that run quietly in the background."
+      "answer": "A predictable, lightweight containerised stack hosted securely on a private cloud VPS—completely bypassing desktop installation headaches. Clients don't need to install anything; they simply open a secure browser tab while maintenance is managed seamlessly in the background."
     },
     {
       "question": "What about AI?",
@@ -58,8 +70,8 @@
     }
   ],
   "cta": {
-    "headline": "Ready to bring clarity to your operations?",
-    "warning": "Fix your workflows first to turn your systems into a force multiplier.",
+    "headline": "Ready to clear the operational noise?",
+    "warning": "Turn your workflows into a force multiplier.",
     "buttonText": "Get in touch",
     "buttonUrl": "#contact"
   }
